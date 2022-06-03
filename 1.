@@ -1,0 +1,19 @@
+vector<int>v;
+       if(arr[0]==s){
+           return {1,1};
+       }
+       int i=0,j=i+1;
+       long long sum=0;
+       sum=arr[i]+arr[j];
+       while(i<n and j<n){
+          if(sum==s) return {i+1,j+1};
+          if(sum>s){
+             sum-=arr[i];
+              i++;
+          }
+          else{
+              j++;
+              sum+=arr[j];
+          } 
+       }
+       return {-1};
